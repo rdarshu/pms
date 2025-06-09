@@ -1,59 +1,115 @@
-# Pms
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.14.
+# PMS — Patient Management System
 
-## Development server
+A simple Angular-based PMS app to manage patient records, authentication, and CRUD operations, using mock APIs (ngx in-memory web API) for backend.
 
-To start a local development server, run:
+---
 
-```bash
-ng serve
+## 🚀 Features
+
+- Patient login/logout (ngx-cookie-service)
+- Delete for patients
+- Filtering & search functionality with Angular Signals
+- In-memory API (via `angular-in-memory-web-api`)
+- Reactive state management using `@ngrx/signals`
+
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend**  
+  - Angular 19+ (standalone components)
+  - Angular Material (toolbar, snackbar, inputs, buttons)
+  - ngx-cookie-service (for auth token)
+  - angular-in-memory-web-api (mock backend)
+  - @ngrx/signals (SignalStore PATIENT state)
+  - RxJS (`toSignal`, `tap`, etc.)
+
+---
+
+## ⚙️ Getting Started
+
+1. Clone this repo:  
+   ```bash
+   git clone https://github.com/rdarshu/pms.git
+   cd pms
+   ```
+
+2. Install dependencies:  
+   ```bash
+   npm install
+   ```
+
+3. Run the application:  
+   ```bash
+   ng serve
+   ```
+
+4. Open in browser at `http://localhost:4200`
+
+---
+
+## 🔍 Searching Patients
+
+Use the search bar to filter by name — results update reactively as you type (powered by Angular Signals and `computed()` filtering).
+
+---
+
+## 📂 Project Structure
+
+```
+src/
+├─ app/
+│  ├─ service/
+│  │   └─ api.service.ts         # HTTP wrapper
+│  ├─ store/
+│  │   └─ patients.store.ts      # SignalStore for patients
+│  ├─ login/
+│  │   └─ login.component.ts     # Auth handling
+│  ├─ dashboard/
+│  ├─ in-memory-data.service.ts  # Mock API backend
+│  ├─ auth.interceptor.ts       # Adds x-api-key header
+│  ├─ spinner.store.ts          # Global spinner state
+│  ├─ toast.store.ts            # Snackbar triggering
+│  └─ patient-list.component.ts # Patient listing + filtering
+└─ main.ts                      # Bootstraps standalone app with in-memory API
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+## 🔧 Usage
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- **Login**: Use the mock credentials in `in-memory-data.service.ts`
+- **Managing patients**:  delete records in patient list
+- **Filtering**: Reactive search updates as you type
+- **Auth guard**: Protects routes using cookies and `SignalStore` auth state
+- **Spinner**: Shows loading during API calls
+- **Toasts**: Notifications for CRUD actions
 
-```bash
-ng generate component component-name
-```
+---
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 📢 Future Enhancements
 
-```bash
-ng generate --help
-```
+- Real backend integration
+- Form validation and toast messages for invalid inputs
+- Profile management and role-based access
+- Pagination or infinite scroll
+- Sorting, filtering by multiple fields
 
-## Building
+---
 
-To build the project run:
+## 🧪 Testing
 
-```bash
-ng build
-```
+(Currently no tests are included. For production, add unit & e2e tests)
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+---
 
-## Running unit tests
+## 📄 License
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+Specify your license here (e.g., MIT)
 
-```bash
-ng test
-```
+---
 
-## Running end-to-end tests
+## ✉️ Feedback & Contributions
 
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Feel free to open issues or submit pull requests!
