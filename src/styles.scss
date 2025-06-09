@@ -1,0 +1,235 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+$primary-color: #005cbb;
+
+$secondary-color :#3e4759;
+
+.flex {
+    display: flex;
+}
+
+.inline-flex {
+    display: inline-flex;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.flex-row-reverse {
+    flex-direction: row-reverse;
+}
+
+.flex-col-reverse {
+    flex-direction: column-reverse;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-nowrap {
+    flex-wrap: nowrap;
+}
+
+.flex-wrap-reverse {
+    flex-wrap: wrap-reverse;
+}
+
+.justify-start {
+    justify-content: flex-start;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-end {
+    justify-content: flex-end;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-around {
+    justify-content: space-around;
+}
+
+.justify-evenly {
+    justify-content: space-evenly;
+}
+
+.items-start {
+    align-items: flex-start;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.items-end {
+    align-items: flex-end;
+}
+
+.items-stretch {
+    align-items: stretch;
+}
+
+.items-baseline {
+    align-items: baseline;
+}
+
+.self-start {
+    align-self: flex-start;
+}
+
+.self-center {
+    align-self: center;
+}
+
+.self-end {
+    align-self: flex-end;
+}
+
+.self-stretch {
+    align-self: stretch;
+}
+
+.flex-grow {
+    flex-grow: 1;
+}
+
+.flex-grow-0 {
+    flex-grow: 0;
+}
+
+.flex-shrink {
+    flex-shrink: 1;
+}
+
+.flex-shrink-0 {
+    flex-shrink: 0;
+}
+
+.h-100 {
+    height: 100vh;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-primary {
+    color: $primary-color;
+}
+
+.text-secondary {
+    color: $secondary-color;
+}
+
+.border {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, .2), 0px 3px 4px 0px rgba(0, 0, 0, .14), 0px 1px 8px 0px rgba(0, 0, 0, .12);
+}
+
+.border-radius-0 {
+    border-radius: 0px;
+}
+
+$space: (
+    0: 0rem,
+    1: 0.25rem,
+    2: 0.5rem,
+    3: 0.75rem,
+    4: 1rem,
+    5: 1.25rem,
+    6: 1.5rem,
+    8: 2rem,
+    10: 2.5rem,
+    12: 3rem
+);
+
+/* Margin and Padding Utilities */
+
+@each $key, $val in $space {
+    .m-#{$key} {
+        margin: $val;
+    }
+
+    .mt-#{$key} {
+        margin-top: $val;
+    }
+
+    .me-#{$key} {
+        margin-right: $val;
+    }
+
+    .mb-#{$key} {
+        margin-bottom: $val;
+    }
+
+    .ms-#{$key} {
+        margin-left: $val;
+    }
+
+    .mx-#{$key} {
+        margin-left: $val;
+        margin-right: $val;
+    }
+
+    .my-#{$key} {
+        margin-top: $val;
+        margin-bottom: $val;
+    }
+
+    .p-#{$key} {
+        padding: $val;
+    }
+
+    .pt-#{$key} {
+        padding-top: $val;
+    }
+
+    .pe-#{$key} {
+        padding-right: $val;
+    }
+
+    .pb-#{$key} {
+        padding-bottom: $val;
+    }
+
+    .ps-#{$key} {
+        padding-left: $val;
+    }
+
+    .px-#{$key} {
+        padding-left: $val;
+        padding-right: $val;
+    }
+
+    .py-#{$key} {
+        padding-top: $val;
+        padding-bottom: $val;
+    }
+}
+.mat-mdc-card-header-text{
+    display: none !important;
+}

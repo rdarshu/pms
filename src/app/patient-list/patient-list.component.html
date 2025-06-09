@@ -1,0 +1,29 @@
+<app-topmenu></app-topmenu>
+
+<mat-form-field appearance="outline" class="search-bar">
+    <mat-label>Search Patients</mat-label>
+    <input type="text" matInput [(ngModel)]="searchTerm" (input)="onSearch()" placeholder="Enter name">
+</mat-form-field>
+
+<div class="card-container">
+    <mat-card *ngFor="let patient of patients()" class="patient-card mb-5 mx-5">
+        <mat-card-header class="single-line-header">
+            <div class="patient-info">
+                <mat-icon class="avatar">person</mat-icon>
+                <span class="name">{{ patient.name }}</span>
+                <span class="description">- {{ patient.description }}</span>
+            </div>
+            <div class="card-actions">
+                <button mat-icon-button color="primary" (click)="viewPatient(patient)">
+                    <mat-icon>visibility</mat-icon>
+                </button>
+                <button mat-icon-button color="accent" (click)="editPatient(patient)">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-icon-button color="warn" (click)="deletePatient(patient.id)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </div>
+        </mat-card-header>
+    </mat-card>
+</div>

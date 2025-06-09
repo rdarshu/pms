@@ -1,0 +1,26 @@
+.single-line-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.patient-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.avatar {
+  font-size: 24px;
+}
+
+.card-actions button {
+  margin-left: 4px;
+}
+.search-bar {
+  width: 100%;
+  max-width: 400px;
+  margin: 26px auto;
+  display: block;
+}
